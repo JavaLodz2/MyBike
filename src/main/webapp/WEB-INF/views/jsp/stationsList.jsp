@@ -70,7 +70,6 @@
         <tr style="width: auto; text-align:center; background-color: black; color: white">
             <%--<tr>--%>
             <th><h2>ID</h2></th>
-            <th style="text-align: center"><h2>Login</h2></th>
             <th><h2>Address</h2></th>
             <td><h2>Latitude</h2></td>
             <th><h2>Longitude</h2></th>
@@ -79,14 +78,6 @@
 
         <c:forEach items="${studentsList}" var="item">
             <tr>
-                <td style="width: auto; text-align:center; border: 1px solid #000">
-                    <h3><a href="/studentDetails/${item.id}"> ${item.id}</a>
-                    </h3>
-                </td>
-                <td style="width: auto; text-align:center; border: 1px solid #000">
-                    <h3><a href="/studentDetails/${item.login}"> ${item.login}</a>
-                    </h3>
-                </td>
                 <td style="width: auto; text-align:center; border: 1px solid #000">
                     <h3>${item.id}
                     </h3>

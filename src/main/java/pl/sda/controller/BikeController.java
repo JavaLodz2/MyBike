@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class BikeController {
 
 
-    @Autowired
+   /* @Autowired
     @Qualifier("DBStudentService")
     StudentService studentService;
 
@@ -22,7 +22,7 @@ public class BikeController {
         model.addObject("stationsList", studentService.getAllStudents());
         model.setViewName("stationssList");
 
-        return model;
+        return model;*/
 
     }
-}
+//}

@@ -22,9 +22,12 @@
     <script src="${bootstrapJs}"></script>
 </head>
 <body>
-<header>
+<div class="page-header">
+    <h1>Stations list</h1>
+</div>
+<%--<header>
 
-  <%--  <table>
+    <table>
         <div style="align-content: center">
             <tr>
                 <td style="width: 80px; padding: 10px">
@@ -37,8 +40,8 @@
                 </td>
             </tr>
         </div>
-    </table>--%>
-</header>
+    </table>
+</header>--%>
 
 <%--<form action="/studentsList" method="get" commandName="student">--%>
 
@@ -85,15 +88,19 @@
                     </h3>
                 </td>
                 <td style="width: auto; text-align:center; border: 1px solid #000">
-                    <h3>${item.firstName}
+                    <h3>${item.id}
                     </h3>
                 </td>
                 <td style="width: auto; text-align:center; border: 1px solid #000">
-                    <h3>${item.lastName}
+                    <h3>${item.address}
                     </h3>
                 </td>
                 <td style="width: auto; text-align:center; border: 1px solid #000">
-                    <h3>${item.indexNumber}
+                    <h3>${item.latitude}
+                    </h3>
+                </td>
+                <td style="width: auto; text-align:center; border: 1px solid #000">
+                    <h3>${item.longitude}
                     </h3>
                 </td>
                 <td style="width: auto; text-align:center; border: 1px solid #000">

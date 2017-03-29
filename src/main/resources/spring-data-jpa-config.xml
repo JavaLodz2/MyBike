@@ -9,16 +9,16 @@ http://www.springframework.org/schema/data/jpa http://www.springframework.org/sc
     <jpa:repositories base-package="pl.sda.dao"/>
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost/mybike"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/mybike"/>
+        <property name="username" value=""/> <!-- Enter your username -->
+        <property name="password" value=""/> <!-- Enter your password -->
     </bean>
 
     <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
         <property name="showSql" value="true"/>
         <property name="generateDdl" value="true"/>
-        <property name="database" value="MYSQL"/>
+        <property name="database" value="POSTGRESQL"/>
     </bean>
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -29,7 +29,7 @@ http://www.springframework.org/schema/data/jpa http://www.springframework.org/sc
         <property name="jpaProperties">
             <props>
                 <prop key="hibernate.hbm2ddl.auto">create-drop</prop>
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</prop>
                 <prop key="hibernate.ddl">update</prop>
                 <prop key="hibernate.naming-strategy">org.hibernate.cfg.EJB3NamingStrategy</prop>
                 <prop key="hibernate.enable_lazy_load_no_trans">true</prop>

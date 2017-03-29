@@ -14,7 +14,7 @@ public class Stations {
     private Integer stationId;
 
     @Column(name = "street")
-    @NotBlank(message = "Nazwa ulicy statcji nie może być pusta.")
+    @NotBlank(message = "Station street name cannot be empty.")
     private String street;
 
     public Stations() {

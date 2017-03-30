@@ -3,13 +3,13 @@ package pl.sda.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import pl.sda.model.Bikes;
-import pl.sda.model.Users;
+import pl.sda.model.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<Users, Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> {
 
-    Users findByLogin(String login);
-    Users findByUserId(Integer userId);
-    Users findByBike(Bikes bike);
+    User findByLogin(String login);
+    User findByUserId(Integer userId);
+    User findByBike(Bikes bike);
 
 }

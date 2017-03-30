@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
-public class Users {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,7 +36,7 @@ public class Users {
     @OneToOne(mappedBy = "userBorrowed")
     private Bikes bike;
 
-    public Users() {
+    public User() {
     }
 
     public Integer getUserId() {
@@ -89,7 +89,7 @@ public class Users {
 
     @Override
     public String toString() {
-        return "Users{" +
+        return "User{" +
                 "userId=" + userId +
                 ", login='" + login + '\'' +
                 ", firstName='" + firstName + '\'' +

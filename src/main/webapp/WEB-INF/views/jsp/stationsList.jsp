@@ -1,11 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  trgtrgtrg
-  User: patry
-  Date: 16.03.2017
-  Time: 19:09
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -25,76 +17,44 @@
 <div class="page-header">
     <h1>Stations list</h1>
 </div>
-<%--<header>
-
-    <table>
-        <div style="align-content: center">
-            <tr>
-                <td style="width: 80px; padding: 10px">
-                    <h3><a href="/studentForm"> Add student</a>
-                    </h3>
-                </td>
-                <td style="width: 80px;  padding: 10px">
-                    <h3><a href="/studentsList">All students</a>
-                    </h3>
-                </td>
-            </tr>
-        </div>
-    </table>
-</header>--%>
-
-<%--<form action="/studentsList" method="get" commandName="student">--%>
-
-<%--form:label path="firstName">Search by title:</form:label>
-    <form:input id="firstName" path="firstName" type="text"/>
-    <input type="submit" value="Find">
-</form>--%>
-
 <div class="container">
     <%--<table style="width: 50%; border: thick solid black" ; cellpadding="5" ; cellspacing="5">--%>
     <table class="table table-hover">
         <tbody>
         <thead>
-
-        <div class="input-group">
-            <form:form action="/studentsList" method="post">
-                <input name="name" id="name" type="text" class="form-control" size="40"
-                       placeholder="Search by student's name..."/>
-                <button type="submit" class="btn btn-success">Filter</button>
-            </form:form>
-        </div>
-        </thead>
-
-        <%--<table class="table">--%>
-        <%--<thead class="thead-inverse">--%>
-        <tr style="width: auto; text-align:center; background-color: black; color: white">
-            <%--<tr>--%>
+        <tr>
             <th><h2>ID</h2></th>
             <th><h2>Address</h2></th>
             <td><h2>Latitude</h2></td>
             <th><h2>Longitude</h2></th>
+        </thead>
         </tr>
         <%--</thead>--%>
 
         <c:forEach items="${studentsList}" var="item">
             <tr>
-                <td style="width: auto; text-align:center; border: 1px solid #000">
+                    <%--<td style="width: auto; text-align:center; border: 1px solid #000">--%>
+                <td>
                     <h3>${item.id}
                     </h3>
                 </td>
-                <td style="width: auto; text-align:center; border: 1px solid #000">
+                    <%--<td style="width: auto; text-align:center; border: 1px solid #000">--%>
+                <td>
                     <h3>${item.address}
                     </h3>
                 </td>
-                <td style="width: auto; text-align:center; border: 1px solid #000">
+                    <%--<td style="width: auto; text-align:center; border: 1px solid #000">--%>
+                <td>
                     <h3>${item.latitude}
                     </h3>
                 </td>
-                <td style="width: auto; text-align:center; border: 1px solid #000">
+                    <%--<td style="width: auto; text-align:center; border: 1px solid #000">--%>
+                <td>
                     <h3>${item.longitude}
                     </h3>
                 </td>
-                <td style="width: auto; text-align:center; border: 1px solid #000">
+                    <%--<td style="width: auto; text-align:center; border: 1px solid #000">--%>
+                <td>
                     <h3><a class="btn btn-danger btn-sm" href="/remove/${item.id}">X</a>
                     </h3>
                 </td>

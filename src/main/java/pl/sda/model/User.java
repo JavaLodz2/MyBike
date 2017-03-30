@@ -33,8 +33,8 @@ public class User {
     @NotBlank(message = "You need to specify phone number.")
     private String contactNumber;
 
-    @OneToOne(mappedBy = "userBorrowed")
-    private Bikes bike;
+    @OneToOne
+    private Bike bike;
 
     public User() {
     }
@@ -79,11 +79,11 @@ public class User {
         this.contactNumber = contactNumber;
     }
 
-    public Bikes getBike() {
+    public Bike getBike() {
         return bike;
     }
 
-    public void setBike(Bikes bike) {
+    public void setBike(Bike bike) {
         this.bike = bike;
     }
 

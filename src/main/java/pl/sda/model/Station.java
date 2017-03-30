@@ -3,10 +3,11 @@ package pl.sda.model;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "stations")
-public class Stations {
+public class Station {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,7 +18,18 @@ public class Stations {
     @NotBlank(message = "Station street name cannot be empty.")
     private String street;
 
-    public Stations() {
+    @OneToMany(cascade = CascadeType.PERSIST)
+    private List<Bike> bikeList;
+
+    public List<Bike> getBikeList() {
+        return bikeList;
+    }
+
+    public void setBikeList(List<Bike> bikeList) {
+        this.bikeList = bikeList;
+    }
+
+    public Station() {
     }
 
     public Integer getStationId() {
@@ -38,9 +50,10 @@ public class Stations {
 
     @Override
     public String toString() {
-        return "Stations{" +
+        return "Station{" +
                 "stationId=" + stationId +
                 ", street='" + street + '\'' +
+                ", bikes count='" + bikeList.size() + '\'' +
                 '}';
     }
 }

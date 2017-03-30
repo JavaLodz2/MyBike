@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
-public class Users {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,10 +33,10 @@ public class Users {
     @NotBlank(message = "You need to specify phone number.")
     private String contactNumber;
 
-    @OneToOne(mappedBy = "userBorrowed")
-    private Bikes bike;
+    @OneToOne
+    private Bike bike;
 
-    public Users() {
+    public User() {
     }
 
     public Integer getUserId() {
@@ -79,17 +79,17 @@ public class Users {
         this.contactNumber = contactNumber;
     }
 
-    public Bikes getBike() {
+    public Bike getBike() {
         return bike;
     }
 
-    public void setBike(Bikes bike) {
+    public void setBike(Bike bike) {
         this.bike = bike;
     }
 
     @Override
     public String toString() {
-        return "Users{" +
+        return "User{" +
                 "userId=" + userId +
                 ", login='" + login + '\'' +
                 ", firstName='" + firstName + '\'' +

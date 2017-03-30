@@ -29,6 +29,6 @@ public class StationService {
     }
 
     List<Bike> getStationBikesById(int id) {
-        return stationRepository.findAllBikesByStation(id);
+        return stationRepository.findAllBikesByStationId(id);
     }
 }

@@ -21,7 +21,7 @@ public class BikeController {
         ModelAndView model = new ModelAndView();
         model.addObject("stationList", stationRepository.findAll());
         model.addObject("menu", 1);
-        model.setViewName("stationList");
+        model.setViewName("stationsList");
 
         return model;
     }

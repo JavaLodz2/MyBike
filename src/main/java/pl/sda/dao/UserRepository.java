@@ -5,11 +5,15 @@ import org.springframework.stereotype.Repository;
 import pl.sda.model.Bike;
 import pl.sda.model.User;
 
+
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
     User findByLogin(String login);
+
     User findByUserId(Integer userId);
+
     User findByBike(Bike bike);
+
 
 }

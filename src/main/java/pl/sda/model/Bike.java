@@ -11,7 +11,8 @@ public class Bike {
     @Column(name = "bike_id")
     private Integer bikeId;
 
-    @OneToOne(mappedBy = "userId")
+    @OneToOne
+    @JoinColumn(name = "user_id")
     private User userBorrowed;
 
     @ManyToOne

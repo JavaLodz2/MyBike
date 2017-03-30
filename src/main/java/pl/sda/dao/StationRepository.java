@@ -17,6 +17,6 @@ public interface StationRepository extends JpaRepository<Station, Integer> {
 
     Station findByStreet(String street);
 
-    List<Bike> findAllBikesByStation(Integer stationId);
+    List<Bike> findAllBikesByStationId(Integer stationId);
 
 }

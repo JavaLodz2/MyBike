@@ -17,7 +17,7 @@
             <tr>
                 <th scope="row">
                         <%-- Station info --%>
-                        <a href="/station/${station.id}" class="btn btn-primary btn-sm" role="button">
+                        <a href="/station/${station.stationId}" class="btn btn-primary btn-sm" role="button">
                             <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
                         </a>
                 </th>

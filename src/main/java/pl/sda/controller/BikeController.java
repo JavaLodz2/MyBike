@@ -6,23 +6,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import pl.sda.dao.StationRepository;
 
 @Controller
 public class BikeController {
 
 
-   /* @Autowired
-    @Qualifier("DBStudentService")
-    StudentService studentService;
+//    @Qualifier("DBStudentService")
+    @Autowired
+    private StationRepository stationRepository;
 
 
-    @RequestMapping(value = "/stationsList", method = RequestMethod.GET)
+    @RequestMapping(value = "/stationList", method = RequestMethod.GET)
     public ModelAndView showStudentsList() {
         ModelAndView model = new ModelAndView();
-        model.addObject("stationsList", studentService.getAllStudents());
-        model.setViewName("stationssList");
+        model.addObject("stationList", stationRepository.findAll());
+        model.addObject("menu", 1);
+        model.setViewName("stationList");
 
-        return model;*/
-
+        return model;
     }
-//}
+}

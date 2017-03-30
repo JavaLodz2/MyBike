@@ -11,7 +11,6 @@ import pl.sda.dao.StationRepository;
 public class BikeController {
 
 
-//    @Qualifier("DBStudentService")
     @Autowired
     private StationRepository stationRepository;
 

@@ -33,9 +33,6 @@ public class User {
     @NotBlank(message = "You need to specify phone number.")
     private String contactNumber;
 
-    @OneToOne
-    private Bike bike;
-
     public User() {
     }
 
@@ -77,14 +74,6 @@ public class User {
 
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
-    }
-
-    public Bike getBike() {
-        return bike;
-    }
-
-    public void setBike(Bike bike) {
-        this.bike = bike;
     }
 
     @Override

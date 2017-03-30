@@ -21,7 +21,6 @@ public class StationService {
     private BikeRepository bikeRepository;
 
     List<Station> getAllStations() {
-
         return stationRepository.findAll();
     }
 
@@ -30,8 +29,6 @@ public class StationService {
     }
 
     List<Bike> getStationBikesById(int id) {
-
         return stationRepository.findAllBikesByStation(id);
-
     }
 }

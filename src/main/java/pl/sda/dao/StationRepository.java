@@ -2,6 +2,7 @@ package pl.sda.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import pl.sda.model.Bike;
 import pl.sda.model.Station;
 
 import java.util.List;
@@ -16,6 +17,6 @@ public interface StationRepository extends JpaRepository<Station, Integer> {
 
     Station findByStreet(String street);
 
-    List<Bike> findAllBikesByStation(Station station);
+    List<Bike> findAllBikesByStation(Integer stationId);
 
 }

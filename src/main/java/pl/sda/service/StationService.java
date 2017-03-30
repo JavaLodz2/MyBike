@@ -22,12 +22,12 @@ public class StationService {
     }
 
     Station getStationById(int stationId) {
-        return stationRepository.findByStationId(int id);
+        return stationRepository.findByStationId(stationId);
     }
 
     List<Bike> getStationBikesById(int stationId) {
 
-        return stationRepository.findAllBikesByStation(Station station);
+        return stationRepository.findAllBikesByStation(stationId);
 
     }
 }

@@ -24,5 +24,5 @@ public class BikeController {
 
         return model;*/
 
-    }
+}
 //}

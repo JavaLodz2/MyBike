@@ -10,6 +10,7 @@ import pl.sda.model.User;
 public interface BikeRepository extends JpaRepository<Bike, Integer> {
 
     Bike findByBikeId(Integer bikeId);
+
     Bike findByUserBorrowed(User userBorrowed);
 
 }

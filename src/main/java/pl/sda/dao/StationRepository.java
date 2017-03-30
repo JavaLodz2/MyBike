@@ -12,7 +12,9 @@ import java.util.List;
 public interface StationRepository extends JpaRepository<Station, Integer> {
 
     Station findByStationId(Integer stationId);
+
     Station findByStreet(String street);
+
     List<Bike> findAllBikesByStation(Integer stationId);
-    
+
 }

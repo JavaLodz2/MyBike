@@ -10,7 +10,7 @@ import pl.sda.model.User;
 import java.util.List;
 
 @Service("userService")
-public class UserService{
+public class UserService {
 
     @Autowired
     private UserRepository userRepository;

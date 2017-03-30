@@ -1,67 +1,54 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Stations list</title>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <spring:url value="/resources/core/js/bootstrap.min.js" var="bootstrapJs"/>
-    <script src="${bootstrapJs}"></script>
-</head>
-<body>
-<div class="page-header">
-    <h1>Stations list</h1>
-</div>
-<div class="container">
-    <%--<table style="width: 50%; border: thick solid black" ; cellpadding="5" ; cellspacing="5">--%>
-    <table class="table table-hover">
-        <tbody>
-        <thead>
-        <tr>
-            <th><h2>ID</h2></th>
-            <th><h2>Address</h2></th>
-            <td><h2>Latitude</h2></td>
-            <th><h2>Longitude</h2></th>
-        </thead>
-        </tr>
-        <%--</thead>--%>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-        <c:forEach items="${studentsList}" var="item">
-            <tr>
-                    <%--<td style="width: auto; text-align:center; border: 1px solid #000">--%>
-                <td>
-                    <h3>${item.id}
-                    </h3>
-                </td>
-                    <%--<td style="width: auto; text-align:center; border: 1px solid #000">--%>
-                <td>
-                    <h3>${item.address}
-                    </h3>
-                </td>
-                    <%--<td style="width: auto; text-align:center; border: 1px solid #000">--%>
-                <td>
-                    <h3>${item.latitude}
-                    </h3>
-                </td>
-                    <%--<td style="width: auto; text-align:center; border: 1px solid #000">--%>
-                <td>
-                    <h3>${item.longitude}
-                    </h3>
-                </td>
-                    <%--<td style="width: auto; text-align:center; border: 1px solid #000">--%>
-                <td>
-                    <h3><a class="btn btn-danger btn-sm" href="/remove/${item.id}">X</a>
-                    </h3>
-                </td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
+    <title>MyBike - city bike rental system</title>
+
+    <spring:url value="/resources/core/css/hello.css" var="coreCss"/>
+    <link href="${coreCss}" rel="stylesheet"/>
+    <spring:url value="/resources/core/css/bootstrap.min.css" var="bootstrapCss"/>
+    <link href="${bootstrapCss}" rel="stylesheet"/>
+    <spring:url value="/resources/core/css/sticky-footer-navbar.css" var="stickyCss"/>
+    <link href="${stickyCss}" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <jsp:include page="include/myBikeHeader.jsp"/>
+    </div>
+</nav>
+
+<!-- Begin page content -->
+<div class="container">
+    <jsp:include page="include/stationList.jsp"/>
 </div>
+
+<footer class="footer">
+    <jsp:include page="include/myBikeFooter.jsp"/>
+</footer>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<spring:url value="/resources/core/js/bootstrap.min.js" var="bootstrapJs"/>
+<script src="${bootstrapJs}"></script>
 </body>
 </html>
+

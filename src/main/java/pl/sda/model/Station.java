@@ -18,8 +18,11 @@ public class Station {
     @NotBlank(message = "Station street name cannot be empty.")
     private String street;
 
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "stationStandingOn", cascade = CascadeType.PERSIST)
     private List<Bike> bikeList;
+
+    public Station() {
+    }
 
     public List<Bike> getBikeList() {
         return bikeList;
@@ -27,9 +30,6 @@ public class Station {
 
     public void setBikeList(List<Bike> bikeList) {
         this.bikeList = bikeList;
-    }
-
-    public Station() {
     }
 
     public Integer getStationId() {

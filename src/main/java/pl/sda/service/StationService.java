@@ -2,9 +2,14 @@ package pl.sda.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import pl.sda.dao.StationRepository;
+import pl.sda.model.Bike;
+import pl.sda.model.Station;
 
 import java.util.List;
 
+@Service("stationService")
 public class StationService {
 
 
@@ -22,7 +27,7 @@ public class StationService {
 
     List<Bike> getStationBikesById(int stationId) {
 
-        return stationRepository.findBikesByStationId(int id);
+        return stationRepository.findAllBikesByStation(Station station);
 
     }
 }

@@ -4,11 +4,11 @@ INSERT INTO public.stations (station_id, street) VALUES (3, 'Zielona 22');
 INSERT INTO public.stations (station_id, street) VALUES (4, 'Zgierska 50');
 INSERT INTO public.stations (station_id, street) VALUES (5, 'Nawrot 10');
 
-INSERT INTO public.bikes (bike_id, user_id, stationstandingon_station_id) VALUES (1, null, 1);
-INSERT INTO public.bikes (bike_id, user_id, stationstandingon_station_id) VALUES (2, null, 1);
-INSERT INTO public.bikes (bike_id, user_id, stationstandingon_station_id) VALUES (3, null, 2);
-INSERT INTO public.bikes (bike_id, user_id, stationstandingon_station_id) VALUES (4, null, 2);
-INSERT INTO public.bikes (bike_id, user_id, stationstandingon_station_id) VALUES (5, null, 3);
+INSERT INTO public.bikes (bike_id, user_id, station_id) VALUES (1, null, 1);
+INSERT INTO public.bikes (bike_id, user_id, station_id) VALUES (2, null, 1);
+INSERT INTO public.bikes (bike_id, user_id, station_id) VALUES (3, null, 2);
+INSERT INTO public.bikes (bike_id, user_id, station_id) VALUES (4, null, 2);
+INSERT INTO public.bikes (bike_id, user_id, station_id) VALUES (5, null, 3);
 
 INSERT INTO public.users (user_id, contact_number, first_name, last_name, login) VALUES (1, '600700800', 'Jan', 'Kowalski', 'Kowal');
 INSERT INTO public.users (user_id, contact_number, first_name, last_name, login) VALUES (2, '500100200', 'Marian', 'Nowak', 'Nowak01');

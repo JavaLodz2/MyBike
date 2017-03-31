@@ -9,7 +9,7 @@ import pl.sda.model.User;
 
 import java.util.List;
 
-@Service("userService")
+@Service
 public class UserService {
 
     @Autowired

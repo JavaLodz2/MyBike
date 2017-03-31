@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import pl.sda.dao.BikeRepository;
 import pl.sda.dao.StationRepository;
 import pl.sda.dao.UserRepository;
 import pl.sda.model.User;
@@ -20,6 +21,9 @@ public class BikeController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private BikeRepository bikeRepository;
 
 
     @RequestMapping(value = "/stationList", method = RequestMethod.GET)
@@ -37,6 +41,7 @@ public class BikeController {
         ModelAndView model = new ModelAndView();
         model.addObject("bikeList", stationRepository.findAllBikesByStationId(id));
 //        model.addObject("station_id", stationRepository.findByStationId(id));
+        model.addObject("stationStandingOn", stationRepository.findByStationId(id));
         model.addObject("menu", 1);
         model.setViewName("bikesList");
 

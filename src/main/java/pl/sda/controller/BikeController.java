@@ -2,14 +2,13 @@ package pl.sda.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import pl.sda.model.Bike;
+import pl.sda.model.User;
 import pl.sda.service.BikeService;
 import pl.sda.service.StationService;
+import pl.sda.service.UserService;
 
 @Controller
 public class BikeController {
@@ -19,6 +18,9 @@ public class BikeController {
 
     @Autowired
     private BikeService bikeService;
+
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "/stationsList", method = RequestMethod.GET)
     public ModelAndView showStations() {
@@ -61,4 +63,19 @@ public class BikeController {
         //todo dopisać zmianę w bazie - wypożyczenie a tym samym id usera do roweru
         return model;
     }
+
+    @RequestMapping(value = "/return/{bikeId}", method = RequestMethod.GET)
+    public ModelAndView confirmReturnBike(@PathVariable("bikeId") Integer bikeId,
+                                          @RequestParam("userId") Integer userId) {
+        ModelAndView model = new ModelAndView();
+        Bike bike = bikeService.getBike(bikeId);
+        User user = userService.getUser(userId);
+        model.addObject("bike", bike);
+        model.addObject("user", user);
+        model.addObject("menu", 3);
+        model.setViewName("userBikes");
+        return model;
+    }
+
+
 }

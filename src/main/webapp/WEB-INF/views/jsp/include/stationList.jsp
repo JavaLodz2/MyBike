@@ -29,12 +29,12 @@
                 <div id="studentList">
                     <c:forEach var="station" items="${stationList}">
                         <tr>
-                            <th scope="row">
+                            <td scope="row">
                                     <%-- Station info --%>
                                 <a href="/station/${station.stationId}" class="btn btn-primary btn-sm" role="button">
-                                    <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                                    View
                                 </a>
-                            </th>
+                            </td>
                             <td>${station.street}</td>
                             <td>${station.bikeList.size()}</td>
 

@@ -17,7 +17,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <form method="get" href="/return/${bike.bikeId}">
+                <form method="post" href="/return/">
                     <div id="bikeList">
                         <c:forEach var="bike" items="${bikeList}">
                             <tr>
@@ -25,17 +25,16 @@
                                 <td>{last rent on ....}</td>
                                 <td>
                                     <select name="stations">
-                                    <c:forEach var="station" items="${stations}">
-                                        <option value="${station.street}"}>${station.street}</option>
-                                    </c:forEach>
-                                </select>
+                                        <c:forEach var="station" items="${stations}">
+                                            <option value="${station.street}" }>${station.street}</option>
+                                        </c:forEach>
+                                    </select>
                                 </td>
                                 <td>
                                     <input type="submit" class="btn btn-error btn-sm">
-                                        Return
+                                    Return
                                     </input>
                                 </td>
-
                             </tr>
                         </c:forEach>
                     </div>

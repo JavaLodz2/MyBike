@@ -84,15 +84,15 @@ public class BikeController {
     }
 
     @RequestMapping(value = "/return", method = RequestMethod.POST)
-    public ModelAndView returnBike(@ModelAttribute Bike bike) {
+    public ModelAndView returnBike(@ModelAttribute Station station, @ModelAttribute Bike bike) {
         ModelAndView model = new ModelAndView();
 
+        bikeService.returnBike(bike.getBikeId(), station.getStationId());
         model.addObject("stationList", stationService.getAllStations());
         model.addObject("menu", 1);
         model.setViewName("stationsList");
 
         //todo dopisać zmianę w bazie - wypożyczenie a tym samym id usera do roweru
-
 
         return model;
     }

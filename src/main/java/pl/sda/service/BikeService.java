@@ -9,6 +9,7 @@ import pl.sda.dao.StationRepository;
 import pl.sda.model.Bike;
 import pl.sda.model.Station;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -49,6 +50,7 @@ public class BikeService {
     public List<Bike> getAllBikesOnStation(Integer stationId) {
         log.debug("Searching for bikes on station id=" + stationId);
         List<Bike> bikeList = bikeRepository.findAll().stream()
+                .filter(s -> s.getStationStandingOn() != null)
                 .filter(s -> Objects.equals(s.getStationStandingOn().getStationId(), stationId))
                 .collect(Collectors.toList());
         log.debug("Found " + bikeList.size() + " items.");
@@ -59,8 +61,10 @@ public class BikeService {
     public List<Bike> getAllBikesFromUser(Integer userId) {
         log.debug("Searching for "+ userId + "'s borrowed bikes");
         List<Bike> bikeList = bikeRepository.findAll().stream()
-                .filter(u -> Objects.equals(u.getUserBorrowed()
-                        .getUserId(), userId)).collect(Collectors.toList());
+                .filter(bike -> bike.getUserBorrowed() != null)
+                .filter(bike -> Objects.equals(bike.getUserBorrowed().getUserId(), userId))
+                .collect(Collectors.toList());
+
         log.debug("Found " + bikeList.size() + " bikes" );
         return bikeList;
     }

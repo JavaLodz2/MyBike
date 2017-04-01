@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div class="page-header">
     <h1>Main stations</h1>
 </div>
@@ -17,28 +18,28 @@
                 </tr>
                 </thead>
                 <tbody>
-                <form method="post" href="/return/">
+                <form:form method="post" action="/return" commandName="station">
                     <div id="bikeList">
                         <c:forEach var="bike" items="${bikeList}">
                             <tr>
                                 <td>Bike no ${bike.bikeId}</td>
+                                <form:hidden path="bike.bikeId"/>
                                 <td>{last rent on ....}</td>
                                 <td>
                                     <select name="stations">
                                         <c:forEach var="station" items="${stations}">
-                                            <option value="${station.street}" }>${station.street}</option>
+                                            <option name="${station.stationId}" value="${station.street}" }>${station.street}</option>
                                         </c:forEach>
                                     </select>
                                 </td>
                                 <td>
-                                    <input type="submit" class="btn btn-error btn-sm">
-                                    Return
-                                    </input>
+                                    <button type="submit" value="" class="btn-group btn-group-lg btn-success">Return
+                                    </button>
                                 </td>
                             </tr>
                         </c:forEach>
                     </div>
-                </form>
+                </form:form>
                 </tbody>
             </table>
         </div>

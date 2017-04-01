@@ -2,6 +2,7 @@ package pl.sda.config;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.ServletException;
@@ -21,8 +22,8 @@ public class ApplicationInitializer implements WebApplicationInitializer {
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/");
 
-//        servletContext.addFilter("springSecurityFilterChain", DelegatingFilterProxy.class)
-//                .addMappingForUrlPatterns(null, false, "/*");
+        servletContext.addFilter("springSecurityFilterChain", DelegatingFilterProxy.class)
+                .addMappingForUrlPatterns(null, false, "/*");
 
     }
 }

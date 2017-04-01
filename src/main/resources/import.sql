@@ -10,8 +10,8 @@ INSERT INTO public.bikes (bike_id, user_id, station_id) VALUES (3, null, 2);
 INSERT INTO public.bikes (bike_id, user_id, station_id) VALUES (4, null, 2);
 INSERT INTO public.bikes (bike_id, user_id, station_id) VALUES (5, null, 3);
 
-INSERT INTO public.users (user_id, contact_number, first_name, last_name, login) VALUES (1, '600700800', 'Jan', 'Kowalski', 'Kowal');
-INSERT INTO public.users (user_id, contact_number, first_name, last_name, login) VALUES (2, '500100200', 'Marian', 'Nowak', 'Nowak01');
-INSERT INTO public.users (user_id, contact_number, first_name, last_name, login) VALUES (3, '700100300', 'Maria', 'Marchewka', 'Marchewa1');
-INSERT INTO public.users (user_id, contact_number, first_name, last_name, login) VALUES (4, '650300400', 'Patrycja', 'Ziemniak', 'PZiem');
-INSERT INTO public.users (user_id, contact_number, first_name, last_name, login) VALUES (5, '770320200', 'Przemek', 'Przygoda', 'PPAdv');
+INSERT INTO public.users (user_id, contact_number, first_name, last_name, login, password, user_role, enabled) VALUES (1, '600700800', 'Jan', 'Kowalski', 'Kowal', '123kowal', 'ROLE_USER', true);
+INSERT INTO public.users (user_id, contact_number, first_name, last_name, login, password, user_role, enabled) VALUES (2, '500100200', 'Marian', 'Nowak', 'Nowak01', 'nowakmarian', 'ROLE_USER', true);
+INSERT INTO public.users (user_id, contact_number, first_name, last_name, login, password, user_role, enabled) VALUES (3, '700100300', 'Maria', 'Marchewka', 'Marchewa1', 'mary666', 'ROLE_USER', true);
+INSERT INTO public.users (user_id, contact_number, first_name, last_name, login, password, user_role, enabled) VALUES (4, '650300400', 'Patrycja', 'Ziemniak', 'PZiem', 'test', 'ROLE_USER', true);
+INSERT INTO public.users (user_id, contact_number, first_name, last_name, login, password, user_role, enabled) VALUES (5, '770320200', 'Przemek', 'Przygoda', 'PPAdv', 'adv01', 'ROLE_USER', true);

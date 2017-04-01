@@ -50,10 +50,7 @@ public class Station {
 
     @Override
     public String toString() {
-        return "Station{" +
-                "stationId=" + stationId +
-                ", street='" + street + '\'' +
-                ", bikes count='" + bikeList.size() + '\'' +
-                '}';
+        return  "Station no " + stationId +
+                ", street " + street;
     }
 }

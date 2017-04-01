@@ -12,8 +12,8 @@
 <div bookId="navbar" class="collapse navbar-collapse">
     <ul class="nav navbar-nav">
         <li <c:if test="${menu eq 0}"> class="active" </c:if>><a href="/">Start</a></li>
-        <li <c:if test="${menu eq 1}"> class="active" </c:if>><a href="/">Stations list</a></li>
-        <li <c:if test="${menu eq 3}"> class="active" </c:if>><a href="/">Return bike</a></li>
+        <li <c:if test="${menu eq 1}"> class="active" </c:if>><a href="/stationsList">Stations list</a></li>
+        <li <c:if test="${menu eq 3}"> class="active" </c:if>><a href="/return/">Return bike</a></li>
         <li <c:if test="${menu eq 4}"> class="active" </c:if>><a href="/">Contact</a></li>
         <li <c:if test="${menu eq 5}"> class="active" </c:if>><a href="/">Login</a></li>
     </ul>

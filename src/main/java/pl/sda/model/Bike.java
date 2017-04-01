@@ -15,7 +15,8 @@ public class Bike {
     @JoinColumn(name = "user_id")
     private User userBorrowed;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+    @JoinColumn(name = "station_id")
     private Station stationStandingOn;
 
     public Bike() {

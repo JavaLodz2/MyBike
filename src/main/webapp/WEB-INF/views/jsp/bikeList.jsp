@@ -33,7 +33,7 @@
 
 <!-- Begin page content -->
 <div class="container">
-    <jsp:include page="include/stationList.jsp"/>
+    <jsp:include page="include/bikeList.jsp"/>
 </div>
 
 <footer class="footer">

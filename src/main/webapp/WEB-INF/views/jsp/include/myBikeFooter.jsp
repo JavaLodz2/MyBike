@@ -2,7 +2,7 @@
     <p class="text-muted">
     <div class="row">
         <div class="col-md-6">
-            Wykonano w Springu - Ćwiczenia SDA.
+            Made in spring by SDA Lodz team.
 
         </div>
     </div>

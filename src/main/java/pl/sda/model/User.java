@@ -3,6 +3,7 @@ package pl.sda.model;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -32,6 +33,17 @@ public class User {
     @Column(name = "contact_number")
     @NotBlank(message = "You need to specify phone number.")
     private String contactNumber;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "user_role")
+    private String role;
+
+    @Column(name = "enabled")
+    @NotNull
+    private boolean enabled;
+
 
     public User() {
     }
@@ -74,6 +86,30 @@ public class User {
 
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     @Override

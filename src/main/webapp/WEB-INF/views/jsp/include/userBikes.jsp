@@ -18,26 +18,30 @@
                 </tr>
                 </thead>
                 <tbody>
-                <form:form method="post" action="/return" commandName="station">
+                <form:form method="post" action="/returnBike" commandName="returnBikeDTO">
                     <div id="bikeList">
-                        <c:forEach var="bike" items="${bikeList}">
-                            <tr>
-                                <td>Bike no ${bike.bikeId}</td>
-                                <form:hidden path="bike.bikeId"/>
-                                <td>{last rent on ....}</td>
-                                <td>
-                                    <select name="stations">
-                                        <c:forEach var="station" items="${stations}">
-                                            <option name="${station.stationId}" value="${station.street}" }>${station.street}</option>
-                                        </c:forEach>
-                                    </select>
-                                </td>
-                                <td>
-                                    <button type="submit" value="" class="btn-group btn-group-lg btn-success">Return
-                                    </button>
-                                </td>
-                            </tr>
-                        </c:forEach>
+                        <tr>
+                            <td>Bike no ${userBike.bikeId}</td>
+                            <td>{last rent on ....}</td>
+                            <td>
+                                <form:hidden id="bikeId" path="bikeId"/>
+                                <form:select path="stationId" items="${stations}"/>
+
+                                <%-- TODO w kontrolerze i w formularzu nie działa mapowanie --%>
+                                    <%--
+                                                                        <select name="stations">
+                                                                            <c:forEach var="station" items="${stations}">
+                                                                                <option name="${station.stationId} value="
+                                                                                ${station.stationId}">${station.street}</option>
+                                                                            </c:forEach>
+                                                                        </select>
+                                    --%>
+                            </td>
+                            <td>
+                                <button type="submit" value="" class="btn-group btn-group-lg btn-success">Return
+                                </button>
+                            </td>
+                        </tr>
                     </div>
                 </form:form>
                 </tbody>

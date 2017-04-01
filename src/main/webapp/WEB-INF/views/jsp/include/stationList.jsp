@@ -2,7 +2,39 @@
 <div class="page-header">
     <h1>Main stations</h1>
 </div>
+<div class="row">
+    <div class="col-md-offset-1 col-md-10">
+        <div class="panel panel-default">
+            <div class="panel-heading">Hello ${user.firstName} ${user.lastName}. You have ${bikeList.size()}
+                rent bikes
+            </div>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Bike number</th>
+                    <th>Station address</th>
+                    <th>Rent on</th>
+                </tr>
+                </thead>
+                <tbody>
 
+                <div>
+                    <c:forEach var="bike" items="${bikeList}">
+                    </tr>
+                    <td>${bike.getBikeId()}</td>
+                    <%--<td>${bike.getStationStandingOn().getStreet()}</td>--%>
+                        <td>${bike.getStationStandingOn().getStreet()}</td>
+                    <td>Rent on</td>
+                    <tr>
+                        </c:forEach>
+                </div>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+</div>
 <div class="row">
     <div class="col-md-offset-1 col-md-10">
         <div class="panel panel-default">
@@ -22,7 +54,7 @@
                 <tr>
                     <th>#</th>
                     <th>Station address</th>
-                    <th>Number of bikes avaible</th>
+                    <th>Number of bikes available</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,7 +63,8 @@
                         <tr>
                             <td scope="row">
                                     <%-- Station info --%>
-                                <a href="/station/${station.stationId}" class="btn btn-primary btn-sm" role="button">
+                                <a href="/station/${station.stationId}" class="btn btn-primary btn-sm"
+                                   role="button">
                                     View
                                 </a>
                             </td>

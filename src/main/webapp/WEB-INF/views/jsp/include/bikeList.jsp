@@ -26,15 +26,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <div id="studentList">
+                <div id="bikeList">
                     <c:forEach var="bike" items="${bikeList}">
                         <tr>
-                            <th scope="row">
+                            <td scope="row">
                                     <%-- Station info --%>
-                                <a href="/rent/${bike.bikeId}" class="btn btn-primary btn-sm" role="button">Rent
-                                    <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                                <a href="/rent/${bike.bikeId}" class="btn btn-primary btn-sm" role="button">
+                                    Rent
                                 </a>
-                            </th>
+                            </td>
                             <td>Bike no ${bike.bikeId}</td>
                             <td>{last rent on ....}</td>
 

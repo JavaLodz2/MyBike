@@ -10,6 +10,7 @@ import pl.sda.model.User;
 import pl.sda.service.BikeService;
 import pl.sda.service.StationService;
 import pl.sda.service.UserService;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -61,15 +62,17 @@ public class BikeController {
         model.addObject("stationList", stationService.getAllStations());
         model.addObject("menu", 1);
         model.setViewName("stationsList");
-        
+
         userService.rentBike(bike.getBikeId(), 1);
         return model;
     }
 
-    @RequestMapping(value = "/return/{userId}", method = RequestMethod.GET)
-    public ModelAndView confirmReturnBike(@PathVariable("userId") Integer userId) {
+    @RequestMapping(value = "/return", method = RequestMethod.GET)
+    public ModelAndView returnBike() {
+        Integer userId = 1;
         ModelAndView model = new ModelAndView();
-        List<Bike> bikeList = bikeService.getAllBikesFromUser(userId);
+        List<Bike> bikeList = new ArrayList<Bike>();
+        bikeList = bikeService.getAllBikesFromUser(userId);
         User user = userService.getUser(userId);
         List<Station> stations = stationService.getAllStations();
         model.addObject("bikeList", bikeList);
@@ -80,7 +83,19 @@ public class BikeController {
         return model;
     }
 
+    @RequestMapping(value = "/return", method = RequestMethod.POST)
+    public ModelAndView returnBike(@ModelAttribute Bike bike) {
+        ModelAndView model = new ModelAndView();
 
+        model.addObject("stationList", stationService.getAllStations());
+        model.addObject("menu", 1);
+        model.setViewName("stationsList");
+
+        //todo dopisać zmianę w bazie - wypożyczenie a tym samym id usera do roweru
+
+
+        return model;
+    }
 
 
 }

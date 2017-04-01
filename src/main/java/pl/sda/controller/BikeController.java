@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import pl.sda.model.Bike;
 import pl.sda.service.BikeService;
 import pl.sda.service.StationService;
+import pl.sda.service.UserService;
 
 @Controller
 public class BikeController {
@@ -19,6 +20,9 @@ public class BikeController {
 
     @Autowired
     private BikeService bikeService;
+
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "/stationsList", method = RequestMethod.GET)
     public ModelAndView showStations() {
@@ -57,8 +61,8 @@ public class BikeController {
         model.addObject("stationList", stationService.getAllStations());
         model.addObject("menu", 1);
         model.setViewName("stationsList");
-
-        //todo dopisać zmianę w bazie - wypożyczenie a tym samym id usera do roweru
+        
+        userService.rentBike(bike.getBikeId(), 1);
         return model;
     }
 }

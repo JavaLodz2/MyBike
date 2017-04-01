@@ -38,24 +38,26 @@
     <div class="row">
         <div class="col-md-offset-1 col-md-10">
             <div class="panel panel-primary">
-                <%-- Default panel contents --%>
-                <div class="panel-heading">You are about to rent bike no.${bike.bikeId} - from station
-                    on ${station.street} street
-                </div>
-                <div class="panel-body">
-                    <h4>Are you sure?</h4>
-                </div>
-                <form action="/rent/ok" method="POST">
+                <form:form action="/rent/ok" method="post" commandName="bike">
+                    <%-- Default panel contents --%>
+                    <form:hidden path="bikeId"></form:hidden>
+                    <div class="panel-heading">You are about to rent bike no.${bike.bikeId} - from station
+                        on ${station.street} street
+                    </div>
+                    <div class="panel-body">
+                        <h4>Are you sure?</h4>
+                    </div>
+
                     <div class="form-group">
-                        <input id="${bike.bikeId}" hidden/>
-                        <button type="submit" class="btn-group btn-group-lg btn-success">OK rent
+
+                        <button type="submit" value="" class="btn-group btn-group-lg btn-success">OK rent
                         </button>
                         <a href="/stationsList" class="btn-group btn-group-lg btn-success" role="button">Go back
                         </a>
                     </div>
-                </form>
-
+                </form:form>
             </div>
+
         </div>
     </div>
 </div>

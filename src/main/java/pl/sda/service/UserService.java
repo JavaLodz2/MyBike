@@ -27,10 +27,13 @@ public class UserService {
     }
 
     public void rentBike(int bikeId, int userId) {
+        userId = 1;
         Bike bike = bikeRepository.findByBikeId(bikeId);
         User user = userRepository.findByUserId(userId);
 
         bike.setUserBorrowed(user);
         bike.setStationStandingOn(null);
+
+       bikeRepository.save(bike);
     }
 }

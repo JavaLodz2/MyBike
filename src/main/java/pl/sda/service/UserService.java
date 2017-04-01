@@ -24,6 +24,8 @@ public class UserService implements UserDetailsService {
     @Autowired
     private BikeRepository bikeRepository;
 
+    public void addUser(User user) { userRepository.save(user); }
+
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }

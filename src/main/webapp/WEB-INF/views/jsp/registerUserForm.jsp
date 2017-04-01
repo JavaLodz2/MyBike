@@ -54,27 +54,47 @@
     <div class="col-md-offset-3 col-md-6">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">Please log in</h3>
+                <h3 class="panel-title">>Register new user</h3>
             </div>
             <div class="panel-body">
-                <form name="form-signin" action="${loginUrl}" method="post">
 
-                    <input type="hidden"
-                           name="${_csrf.parameterName}"
-                           value="${_csrf.token}"/>
+                <form:form action="/registerUserForm" method="post" commandName="user">
+                    <div class="form-group">
+                        <form:label path="login">Login:</form:label>
+                        <form:input class="form-control" id="login" path="login" type="text"/>
+                        <form:errors path="login"/>
+                    </div>
 
-                    <div class="form-group">
-                        <label for="login">Login</label>
-                        <input type="text" class="form-control" id="login" name="login" placeholder="Login" required autofocus>
+                    <div>
+                        <form:label path="password">Password:</form:label>
+                        <br>
+                        <form:input class="form-control" id="password" path="password" type="text"/>
+                        <form:errors path="password"/>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password"
-                               placeholder="Password" required>
+
+                    <div>
+                        <form:label path="firstName">FirstName</form:label>
+                        <br>
+                        <form:input class="form-control" id="firstName" path="firstName" type="text"/>
+                        <form:errors path="firstName"/>
                     </div>
-                    <button type="submit" class="btn btn-default">Log in</button>
-                    <a href="/registerUserForm" class="btn btn-default RIGHT-button">Registration form</a>
-                </form>
+                    <div>
+                        <form:label path="lastName">LastName</form:label>
+                        <br>
+                        <form:input class="form-control" id="lastName" path="lastName" type="text"/>
+                        <form:errors path="lastName"/>
+                    </div>
+                    <div>
+                        <form:label path="contactNumber">ContactNumber</form:label>
+                        <br>
+                        <form:input class="form-control" id="contactNumber" path="contactNumber"
+                                    type="text"/>
+                        <form:errors path="contactNumber"/>
+                    </div>
+                    <form:hidden path="role" value="ROLE_USER"></form:hidden>
+                    <br>
+                    <input type="submit" class="btn btn-default" value="Sign Up">
+                </form:form>
 
             </div>
         </div>
@@ -95,4 +115,5 @@
 <script src="${bootstrapJs}"></script>
 </body>
 </html>
+
 

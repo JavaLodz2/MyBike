@@ -28,7 +28,18 @@ public class BikeController {
     @RequestMapping(value = "/stationsList", method = RequestMethod.GET)
     public ModelAndView showStations() {
         ModelAndView model = new ModelAndView();
+        Integer userId = 1;
+        List<Bike> bikeList = new ArrayList<>();
+        bikeList = bikeService.getAllBikesFromUser(userId);
+        model.addObject("bikeList", bikeList);
+        User user = userService.getUser(userId);
+        model.addObject("user", user);
         model.addObject("stationList", stationService.getAllStations());
+
+//        Bike bike = bikeService.getBike(id);
+//        model.addObject("bike", bike);
+//        model.addObject("station", bike.getStationStandingOn());
+
         model.addObject("menu", 1);
         model.setViewName("stationsList");
         return model;
@@ -64,7 +75,7 @@ public class BikeController {
         model.setViewName("stationsList");
 
         userService.rentBike(bike.getBikeId(), 1);
-        return model;
+        return new ModelAndView("redirect:/stationsList");
     }
 
     @RequestMapping(value = "/return", method = RequestMethod.GET)

@@ -5,10 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import pl.sda.model.Bike;
+import pl.sda.model.Station;
 import pl.sda.model.User;
 import pl.sda.service.BikeService;
 import pl.sda.service.StationService;
 import pl.sda.service.UserService;
+
+import java.util.List;
 
 @Controller
 public class BikeController {
@@ -64,18 +67,21 @@ public class BikeController {
         return model;
     }
 
-    @RequestMapping(value = "/return/{bikeId}", method = RequestMethod.GET)
-    public ModelAndView confirmReturnBike(@PathVariable("bikeId") Integer bikeId,
-                                          @RequestParam("userId") Integer userId) {
+    @RequestMapping(value = "/return/{userId}", method = RequestMethod.GET)
+    public ModelAndView confirmReturnBike(@PathVariable("userId") Integer userId) {
         ModelAndView model = new ModelAndView();
-        Bike bike = bikeService.getBike(bikeId);
+        List<Bike> bikeList = bikeService.getAllBikesFromUser(userId);
         User user = userService.getUser(userId);
-        model.addObject("bike", bike);
+        List<Station> stations = stationService.getAllStations();
+        model.addObject("bikeList", bikeList);
         model.addObject("user", user);
+        model.addObject("stations", stations);
         model.addObject("menu", 3);
         model.setViewName("userBikes");
         return model;
     }
+
+
 
 
 }

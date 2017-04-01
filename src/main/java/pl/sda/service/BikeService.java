@@ -55,4 +55,13 @@ public class BikeService {
         //todo - napisać query która pobierze mapowane w encji dane. Na razie realizuję to filtrem.
         return bikeList;
     }
+
+    public List<Bike> getAllBikesFromUser(Integer userId) {
+        log.debug("Searching for "+ userId + "'s borrowed bikes");
+        List<Bike> bikeList = bikeRepository.findAll().stream()
+                .filter(u -> Objects.equals(u.getUserBorrowed()
+                        .getUserId(), userId)).collect(Collectors.toList());
+        log.debug("Found " + bikeList.size() + " bikes" );
+        return bikeList;
+    }
 }

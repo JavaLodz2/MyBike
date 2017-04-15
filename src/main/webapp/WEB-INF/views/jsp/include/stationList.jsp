@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-md-offset-1 col-md-10">
         <div class="panel panel-default">
-            <div class="panel-heading">Hello ${user.firstName} ${user.lastName}. You have ${bikeList.size()}
+            <div class="panel-heading">Hello <strong>${user.firstName} ${user.lastName}</strong>. You have <strong>${bikeList.size()}</strong>
                 rent bikes
             </div>
             <table class="table table-hover">

@@ -150,6 +150,42 @@
     </dependencies>
 
     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals><goal>copy</goal></goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.github.jsimone</groupId>
+                                    <artifactId>webapp-runner</artifactId>
+                                    <version>8.5.11.3</version>
+                                    <destFileName>webapp-runner.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--
+    <build>
         <finalName>ROOT</finalName>
         <plugins>
             <plugin>
@@ -176,15 +212,15 @@
                 <groupId>org.codehaus.cargo</groupId>
                 <artifactId>cargo-maven2-plugin</artifactId>
                 <configuration>
-
+-->
                     <!-- Container configuration -->
-                    <container>
+<!--                    <container>
                         <containerId>tomcat8x</containerId>
                         <home>${env.CATALINA_HOME}</home>
                     </container>
-
+-->
                     <!-- Configuration to use with the container -->
-                    <configuration>
+<!--                    <configuration>
                         <properties>
                             <cargo.servlet.port>18080</cargo.servlet.port>
                             <cargo.logging>medium</cargo.logging>
@@ -195,5 +231,5 @@
             </plugin>
         </plugins>
     </build>
-
+-->
 </project>

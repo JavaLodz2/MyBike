@@ -40,6 +40,7 @@ public class HibernateConfig {
     @Bean
     public BasicDataSource dataSource() throws URISyntaxException {
         URI dbUri = new URI(System.getenv("DATABASE_URL"));
+//        URI dbUri = new URI("postgres://foaexsjfhevjwh:d36923d945175b6ef036b1b4c7d01825cda7764d7658408ab1d9b0a9813c915c@ec2-54-225-182-108.compute-1.amazonaws.com:5432/d7524iei6lhq4v");
 
         String username = dbUri.getUserInfo().split(":")[0];
         String password = dbUri.getUserInfo().split(":")[1];

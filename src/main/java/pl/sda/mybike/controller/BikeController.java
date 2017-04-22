@@ -1,4 +1,4 @@
-package pl.sda.controller;
+package pl.sda.mybike.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import pl.sda.dto.ReturnBikeDTO;
-import pl.sda.model.Bike;
-import pl.sda.model.Station;
-import pl.sda.model.User;
-import pl.sda.service.BikeService;
-import pl.sda.service.StationService;
-import pl.sda.service.UserService;
+import pl.sda.mybike.dto.ReturnBikeDTO;
+import pl.sda.mybike.model.Bike;
+import pl.sda.mybike.model.Station;
+import pl.sda.mybike.model.User;
+import pl.sda.mybike.service.BikeService;
+import pl.sda.mybike.service.StationService;
+import pl.sda.mybike.service.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -124,7 +124,6 @@ public class BikeController {
 
         return model;
     }
-
 
 
 }

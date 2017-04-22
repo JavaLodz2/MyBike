@@ -1,4 +1,4 @@
-package pl.sda.service;
+package pl.sda.mybike.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -7,10 +7,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import pl.sda.dao.BikeRepository;
-import pl.sda.dao.UserRepository;
-import pl.sda.model.Bike;
-import pl.sda.model.User;
+import pl.sda.mybike.dao.BikeRepository;
+import pl.sda.mybike.dao.UserRepository;
+import pl.sda.mybike.model.Bike;
+import pl.sda.mybike.model.User;
 
 import java.util.ArrayList;
 import java.util.List;

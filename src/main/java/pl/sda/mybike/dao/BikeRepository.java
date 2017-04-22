@@ -1,12 +1,8 @@
-package pl.sda.dao;
+package pl.sda.mybike.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import pl.sda.model.Bike;
-
-import java.util.List;
+import pl.sda.mybike.model.Bike;
 
 @Repository
 public interface BikeRepository extends JpaRepository<Bike, Integer> {

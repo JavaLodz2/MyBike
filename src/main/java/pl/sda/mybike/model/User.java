@@ -1,4 +1,4 @@
-package pl.sda.model;
+package pl.sda.mybike.model;
 
 import org.hibernate.validator.constraints.NotBlank;
 

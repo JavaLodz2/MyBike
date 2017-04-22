@@ -1,15 +1,14 @@
-package pl.sda.service;
+package pl.sda.mybike.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.sda.dao.BikeRepository;
-import pl.sda.dao.StationRepository;
-import pl.sda.model.Bike;
-import pl.sda.model.Station;
+import pl.sda.mybike.dao.BikeRepository;
+import pl.sda.mybike.dao.StationRepository;
+import pl.sda.mybike.model.Bike;
+import pl.sda.mybike.model.Station;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;

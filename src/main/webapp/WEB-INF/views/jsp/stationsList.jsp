@@ -9,15 +9,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <link rel="icon" href="/resources/core/favicon.ico">
+    <link rel="icon" href="${contextPath}/resources/favicon.ico">
 
     <title>MyBike - city bike rental system</title>
 
-    <spring:url value="/resources/core/css/hello.css" var="coreCss"/>
+    <spring:url value="${contextPath}/resources/css/hello.css" var="coreCss"/>
     <link href="${coreCss}" rel="stylesheet"/>
-    <spring:url value="/resources/core/css/bootstrap.min.css" var="bootstrapCss"/>
+    <spring:url value="${contextPath}/resources/css/bootstrap.min.css" var="bootstrapCss"/>
     <link href="${bootstrapCss}" rel="stylesheet"/>
-    <spring:url value="/resources/core/css/sticky-footer-navbar.css" var="stickyCss"/>
+    <spring:url value="${contextPath}/resources/css/sticky-footer-navbar.css" var="stickyCss"/>
     <link href="${stickyCss}" rel="stylesheet"/>
 
 </head>
@@ -45,7 +45,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<spring:url value="/resources/core/js/bootstrap.min.js" var="bootstrapJs"/>
+<spring:url value="${contextPath}/resources/js/bootstrap.min.js" var="bootstrapJs"/>
 <script src="${bootstrapJs}"></script>
 </body>
 </html>

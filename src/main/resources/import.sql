@@ -11,4 +11,4 @@ INSERT INTO bikes (bike_id, user_id, station_id) VALUES (4, null, 2);
 INSERT INTO bikes (bike_id, user_id, station_id) VALUES (5, null, 3);
 
 INSERT INTO users (user_id, contact_number, enabled, first_name, last_name, login, password, user_role) VALUES (1, '600700800', true, 'Jan', 'Kowalski', 'admin', 'admin', 'ROLE_ADMIN');
-INSERT INTO users (user_id, contact_number, enabled, first_name, last_name, login, password, user_role) VALUES (2, '600700800', true, 'Marian', 'Nowak', 'user', 'user', 'ROLE_USER');
+INSERT INTO users (user_id, contact_number, enabled, first_name, last_name, login, password, user_role) VALUES (2, '600700800', truegit , 'Marian', 'Nowak', 'user', 'user', 'ROLE_USER');

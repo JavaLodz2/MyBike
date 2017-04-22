@@ -57,7 +57,6 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Please log in</h3>
-                <h4>For testing use : admin / admin</h4>
             </div>
             <div class="panel-body">
                 <form name="form-signin" action="${loginUrl}" method="post">
